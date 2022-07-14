@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+
+    <script src="preload.js"></script>
+</head>
+<body>
+    <img src="pre.jpg" alt="" width="500" id="ShowImage">
+    <div>Image from <a href="https://en.wikipedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" target="_blank">Wikipedia</a></div>
+
+    <script>
+        var Images_to_load = ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"];
+
+        function Callback_Function(url, progress, status){
+            //Display loaded image
+            if (status == "pass"){
+                document.getElementById('ShowImage').src = url;
+            }
+        }
+        preload(Images_to_load, Callback_Function);
+    </script>
+</body>
+</html>
